@@ -1,10 +1,20 @@
-﻿  imgui_impl_glfw.cpp
-  imgui.cpp
-  imgui_demo.cpp
-  imgui_draw.cpp
-  imgui_impl_opengl3.cpp
-  imgui_tables.cpp
-  imgui_widgets.cpp
+﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(514,5): warning MSB8028: The intermediate directory (C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\Debug\) contains files shared from another project (example_glfw_opengl3.vcxproj).  This can lead to incorrect clean and rebuild behavior.
   main.cpp
-  Generating Code...
-  example_glfw_opengl3.vcxproj -> C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\Debug\example_glfw_opengl3.exe
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\imguifade.hpp(19,52): warning C4458: declaration of 'choice' hides class member
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\imguifade.hpp(12,9): message : see declaration of 'imguifade::choice'
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\image.hpp(38,38): warning C4458: declaration of 'xstretch' hides class member
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\image.hpp(12,11): message : see declaration of 'image::xstretch'
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\image.hpp(41,38): warning C4458: declaration of 'ystretch' hides class member
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\image.hpp(13,11): message : see declaration of 'image::ystretch'
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\image.hpp(44,42): warning C4458: declaration of 'xpos' hides class member
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\image.hpp(10,9): message : see declaration of 'image::xpos'
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\image.hpp(44,42): warning C4458: declaration of 'ypos' hides class member
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\image.hpp(11,9): message : see declaration of 'image::ypos'
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\image.hpp(52,1): warning C4312: 'type cast': conversion from 'GLuint' to 'void *' of greater size
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\stb_image.h(2224,32): warning C4244: 'argument': conversion from 'int' to 'short', possible loss of data
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\stb_image.h(2281,35): warning C4244: 'argument': conversion from 'int' to 'short', possible loss of data
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\stb_image.h(3425,49): warning C4244: '=': conversion from 'int' to 'unsigned char', possible loss of data
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\main.cpp(133,9): warning C4189: 'my_image_width': local variable is initialized but not referenced
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\main.cpp(135,12): warning C4189: 'my_image_texture': local variable is initialized but not referenced
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\main.cpp(134,9): warning C4189: 'my_image_height': local variable is initialized but not referenced
+  example_glfw_opengl3.vcxproj -> C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\Debug\glfw_opengl3.exe
