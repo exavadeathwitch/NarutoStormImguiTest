@@ -9,6 +9,7 @@ public:
     int height;
     int xpos = 0;
     int ypos = 0;
+    bool center[2] = {0, 0}; //first value represents if the image is centered on the x-axis, second value represents if the image is centered on the y-axis.
     float xstretch = 1.0f;
     float ystretch = 1.0f;
     ImVec4 transparency = ImVec4(1.0f, 1.0f, 1.0f, 1.0f);
@@ -42,13 +43,36 @@ public:
         this->ystretch = ystretch;
     }
     void setPosition(int xpos, int ypos) {
-        this->xpos = xpos - 10;
-        this->ypos = ypos - 10;
+        this->xpos = xpos - 8;
+        this->ypos = ypos - 8;
+    }
+    void setXPosition(int xpos) {
+        this->xpos = xpos - 8;
+    }
+    void setYPosition(int ypos) {
+        this->ypos = ypos - 8;
     }
     void Begin() {
-        ImGui::SetNextWindowSize(ImVec2(width * this->xstretch + 50, height * this->ystretch + 10));
-        //ImGui::SetNextWindowBgAlpha(0.0f);
+        ImGuiIO& io = ImGui::GetIO();
+        ImGui::SetNextWindowSize(ImVec2(width * this->xstretch + 26, height * this->ystretch + 9));
+        float newxpos = this->xpos;
+        float leftpivot = 0.0f;
+        if (center[0]) {
+            setXPosition(io.DisplaySize.x * 0.5f);
+            leftpivot = width / (2.0f * (width + 26));
+        }
+        float newypos = this->ypos;
+        float rightpivot = 0.0f;
+        if (center[1]) {
+            setYPosition(io.DisplaySize.y * 0.5f);
+            rightpivot = height / (2.0f * (height + 9));
+        }
+        ImGui::SetNextWindowPos(ImVec2(newxpos, newypos), ImGuiCond_Always, ImVec2(leftpivot, rightpivot));
         ImGui::Begin(name.c_str(), &enable, flags);
+        //ImGui::Text(std::to_string(ImGui::GetWindowPos().x).c_str());
+        //ImGui::Text(std::to_string(ImGui::GetWindowPos().y).c_str());
+        //ImGui::Text(std::to_string(ImGui::GetWindowSize().x).c_str());
+        //ImGui::Text(std::to_string(ImGui::GetWindowSize().y).c_str());
         ImGui::Image((void*)view, ImVec2(width * this->xstretch, height * this->ystretch), ImVec2(0, 0), ImVec2(1, 1), this->transparency);
         switch (this->choice) {
         case 0:

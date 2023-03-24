@@ -114,7 +114,7 @@ int main(int, char**)
     // Setup Platform/Renderer backends
     ImGui_ImplGlfw_InitForOpenGL(window, true);
     ImGui_ImplOpenGL3_Init(glsl_version);
-
+    image1.setPosition(0, 0);
     // Load Fonts
     // - If no fonts are loaded, dear imgui will use the default font. You can also load multiple fonts and use ImGui::PushFont()/PopFont() to select them.
     // - AddFontFromFileTTF() will return the ImFont* so you can store it if you need to select the font among multiple.
@@ -168,6 +168,10 @@ int main(int, char**)
                 image1.fadeout(100);
             if (ImGui::Button("testa"))
                 image1.fadein(100);
+            if (ImGui::Button("testb")) {
+                image1.center[0] = true;
+                image1.center[1] = true;
+            }
             ImGui::Text("This is some useful text.");               // Display some text (you can use a format strings too)
             ImGui::Checkbox("Demo Window", &show_demo_window);      // Edit bools storing our window open/close state
             ImGui::Checkbox("Another Window", &show_another_window);
