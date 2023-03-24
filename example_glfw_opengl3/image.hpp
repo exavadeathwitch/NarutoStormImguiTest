@@ -59,20 +59,16 @@ public:
         float leftpivot = 0.0f;
         if (center[0]) {
             setXPosition(io.DisplaySize.x * 0.5f);
-            leftpivot = width / (2.0f * (width + 26));
+            leftpivot = (width * this->xstretch) / (2.0f * ((width * this->xstretch) + 26));
         }
         float newypos = this->ypos;
         float rightpivot = 0.0f;
         if (center[1]) {
             setYPosition(io.DisplaySize.y * 0.5f);
-            rightpivot = height / (2.0f * (height + 9));
+            rightpivot = (height * this->ystretch) / (2.0f * ((height * this->ystretch) + 9));
         }
         ImGui::SetNextWindowPos(ImVec2(newxpos, newypos), ImGuiCond_Always, ImVec2(leftpivot, rightpivot));
         ImGui::Begin(name.c_str(), &enable, flags);
-        //ImGui::Text(std::to_string(ImGui::GetWindowPos().x).c_str());
-        //ImGui::Text(std::to_string(ImGui::GetWindowPos().y).c_str());
-        //ImGui::Text(std::to_string(ImGui::GetWindowSize().x).c_str());
-        //ImGui::Text(std::to_string(ImGui::GetWindowSize().y).c_str());
         ImGui::Image((void*)view, ImVec2(width * this->xstretch, height * this->ystretch), ImVec2(0, 0), ImVec2(1, 1), this->transparency);
         switch (this->choice) {
         case 0:
@@ -96,3 +92,5 @@ public:
     }
 };
 image image1 = image(1280, 720, "test.png", "image test", ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoBackground | ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoResize);
+image image2 = image(960, 540, "test2.png", "imagef test", ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoBackground | ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoResize);
+image image3 = image(1920, 1080, "test3.png", "imageff test", ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoBackground | ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoResize);

@@ -18,7 +18,7 @@ C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_open
 C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\image.hpp(61,43): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
 C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\image.hpp(64,23): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
 C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\image.hpp(67,43): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\image.hpp(76,1): warning C4312: 'type cast': conversion from 'GLuint' to 'void *' of greater size
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\image.hpp(72,1): warning C4312: 'type cast': conversion from 'GLuint' to 'void *' of greater size
 C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\stb_image.h(2224,32): warning C4244: 'argument': conversion from 'int' to 'short', possible loss of data
 C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\stb_image.h(2281,35): warning C4244: 'argument': conversion from 'int' to 'short', possible loss of data
 C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\stb_image.h(3425,49): warning C4244: '=': conversion from 'int' to 'unsigned char', possible loss of data

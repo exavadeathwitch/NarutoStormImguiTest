@@ -114,7 +114,7 @@ int main(int, char**)
     // Setup Platform/Renderer backends
     ImGui_ImplGlfw_InitForOpenGL(window, true);
     ImGui_ImplOpenGL3_Init(glsl_version);
-    image1.setPosition(0, 0);
+    image2.setPosition(0, 0);
     // Load Fonts
     // - If no fonts are loaded, dear imgui will use the default font. You can also load multiple fonts and use ImGui::PushFont()/PopFont() to select them.
     // - AddFontFromFileTTF() will return the ImFont* so you can store it if you need to select the font among multiple.
@@ -133,12 +133,14 @@ int main(int, char**)
     int my_image_width = 0;
     int my_image_height = 0;
     GLuint my_image_texture = 0;
-    bool ret = LoadTextureFromFile(image1.path.c_str(), (GLuint*)&image1.view, &image1.width, &image1.height);
+    bool ret = LoadTextureFromFile(image2.path.c_str(), (GLuint*)&image2.view, &image2.width, &image2.height);
     IM_ASSERT(ret);
     // Our state
     bool show_demo_window = true;
     bool show_another_window = false;
     ImVec4 clear_color = ImVec4(0.45f, 0.55f, 0.60f, 1.00f);
+    image2.setXStretch(2.0f);
+    image2.setYStretch(2.0f);
     // Main loop
     while (!glfwWindowShouldClose(window))
     {
@@ -153,7 +155,7 @@ int main(int, char**)
         ImGui_ImplGlfw_NewFrame();
         ImGui::NewFrame();
         fade.imguifadeloop();
-        image1.Begin();
+        image2.Begin();
         // 1. Show the big demo window (Most of the sample code is in ImGui::ShowDemoWindow()! You can browse its code to learn more about Dear ImGui!).
         if (show_demo_window)
             ImGui::ShowDemoWindow(&show_demo_window);
@@ -165,12 +167,12 @@ int main(int, char**)
 
             ImGui::Begin("Hello, world!");                          // Create a window called "Hello, world!" and append into it.
             if (ImGui::Button("test"))
-                image1.fadeout(100);
+                image2.fadeout(100);
             if (ImGui::Button("testa"))
-                image1.fadein(100);
+                image2.fadein(100);
             if (ImGui::Button("testb")) {
-                image1.center[0] = true;
-                image1.center[1] = true;
+                image2.center[0] = true;
+                image2.center[1] = true;
             }
             ImGui::Text("This is some useful text.");               // Display some text (you can use a format strings too)
             ImGui::Checkbox("Demo Window", &show_demo_window);      // Edit bools storing our window open/close state
