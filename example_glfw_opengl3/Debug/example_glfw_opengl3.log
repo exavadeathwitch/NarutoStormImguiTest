@@ -2,27 +2,109 @@
   main.cpp
 C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\imguifade.hpp(19,52): warning C4458: declaration of 'choice' hides class member
 C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\imguifade.hpp(12,9): message : see declaration of 'imguifade::choice'
-C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\image.hpp(39,38): warning C4458: declaration of 'xstretch' hides class member
-C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\image.hpp(13,11): message : see declaration of 'image::xstretch'
-C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\image.hpp(42,38): warning C4458: declaration of 'ystretch' hides class member
-C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\image.hpp(14,11): message : see declaration of 'image::ystretch'
-C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\image.hpp(45,42): warning C4458: declaration of 'xpos' hides class member
-C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\image.hpp(10,9): message : see declaration of 'image::xpos'
-C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\image.hpp(45,42): warning C4458: declaration of 'ypos' hides class member
-C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\image.hpp(11,9): message : see declaration of 'image::ypos'
-C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\image.hpp(49,33): warning C4458: declaration of 'xpos' hides class member
-C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\image.hpp(10,9): message : see declaration of 'image::xpos'
-C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\image.hpp(52,33): warning C4458: declaration of 'ypos' hides class member
-C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\image.hpp(11,9): message : see declaration of 'image::ypos'
-C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\image.hpp(58,23): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\image.hpp(61,43): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\image.hpp(64,23): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
-C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\image.hpp(67,43): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\image.hpp(72,1): warning C4312: 'type cast': conversion from 'GLuint' to 'void *' of greater size
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\image.hpp(32,23): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\image.hpp(34,24): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\image.hpp(41,31): warning C4458: declaration of 'x1y1' hides class member
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\image.hpp(18,12): message : see declaration of 'image::x1y1'
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\image.hpp(44,31): warning C4458: declaration of 'x2y2' hides class member
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\image.hpp(19,12): message : see declaration of 'image::x2y2'
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\image.hpp(55,38): warning C4458: declaration of 'xstretch' hides class member
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\image.hpp(16,11): message : see declaration of 'image::xstretch'
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\image.hpp(59,38): warning C4458: declaration of 'ystretch' hides class member
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\image.hpp(17,11): message : see declaration of 'image::ystretch'
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\image.hpp(63,42): warning C4458: declaration of 'xpos' hides class member
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\image.hpp(13,11): message : see declaration of 'image::xpos'
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\image.hpp(63,42): warning C4458: declaration of 'ypos' hides class member
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\image.hpp(14,11): message : see declaration of 'image::ypos'
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\image.hpp(64,27): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\image.hpp(65,27): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\image.hpp(67,33): warning C4458: declaration of 'xpos' hides class member
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\image.hpp(13,11): message : see declaration of 'image::xpos'
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\image.hpp(68,27): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\image.hpp(70,33): warning C4458: declaration of 'ypos' hides class member
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\image.hpp(14,11): message : see declaration of 'image::ypos'
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\image.hpp(71,27): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\image.hpp(81,43): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\image.hpp(87,43): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\image.hpp(97,1): warning C4312: 'type cast': conversion from 'GLuint' to 'void *' of greater size
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\nineslice.hpp(58,38): warning C4458: declaration of 'xstretch' hides class member
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\nineslice.hpp(20,11): message : see declaration of 'nineslice::xstretch'
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\nineslice.hpp(67,38): warning C4458: declaration of 'ystretch' hides class member
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\nineslice.hpp(21,11): message : see declaration of 'nineslice::ystretch'
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\nineslice.hpp(108,42): warning C4458: declaration of 'xpos' hides class member
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\nineslice.hpp(15,11): message : see declaration of 'nineslice::xpos'
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\nineslice.hpp(108,42): warning C4458: declaration of 'ypos' hides class member
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\nineslice.hpp(16,11): message : see declaration of 'nineslice::ypos'
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\nineslice.hpp(109,27): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\nineslice.hpp(110,27): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\nineslice.hpp(112,33): warning C4458: declaration of 'xpos' hides class member
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\nineslice.hpp(15,11): message : see declaration of 'nineslice::xpos'
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\nineslice.hpp(113,27): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\nineslice.hpp(115,33): warning C4458: declaration of 'ypos' hides class member
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\nineslice.hpp(16,11): message : see declaration of 'nineslice::ypos'
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\nineslice.hpp(116,27): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\nineslice.hpp(173,47): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\nineslice.hpp(173,35): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\nineslice.hpp(174,84): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\nineslice.hpp(174,64): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\nineslice.hpp(175,84): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\nineslice.hpp(175,64): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\nineslice.hpp(176,85): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\nineslice.hpp(176,46): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\nineslice.hpp(177,103): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\nineslice.hpp(177,64): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\nineslice.hpp(178,159): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\nineslice.hpp(178,120): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\nineslice.hpp(179,85): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\nineslice.hpp(179,46): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\nineslice.hpp(180,162): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\nineslice.hpp(180,64): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\nineslice.hpp(181,103): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\nineslice.hpp(181,64): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\nineslice.hpp(190,88): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\nineslice.hpp(190,68): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\nineslice.hpp(191,88): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\nineslice.hpp(191,68): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\nineslice.hpp(192,89): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\nineslice.hpp(192,50): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\nineslice.hpp(193,107): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\nineslice.hpp(193,68): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\nineslice.hpp(194,163): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\nineslice.hpp(194,124): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\nineslice.hpp(195,89): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\nineslice.hpp(195,50): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\nineslice.hpp(196,166): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\nineslice.hpp(196,68): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\nineslice.hpp(197,107): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\nineslice.hpp(197,68): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\imguiutil.hpp(13,23): warning C4189: 'id': local variable is initialized but not referenced
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\textbox.hpp(68,15): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\textbox.hpp(69,16): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\textbox.hpp(72,15): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\textbox.hpp(73,15): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\textbox.hpp(75,17): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\textbox.hpp(86,17): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\textbox.hpp(105,13): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\textbox.hpp(106,13): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\textbox.hpp(120,54): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\textbox.hpp(120,46): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\textbox.hpp(120,39): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22000.0\shared\minwindef.h(130,1): warning C4005: 'APIENTRY': macro redefinition
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\libs\glfw\include\GLFW\glfw3.h(98): message : see previous definition of 'APIENTRY'
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\messagebox.hpp(20,44): warning C4458: declaration of 'choice' hides class member
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\messagebox.hpp(14,6): message : see declaration of 'messagebox::choice'
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\messagebox.hpp(24,30): warning C4458: declaration of 'fadeouttime' hides class member
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\messagebox.hpp(13,6): message : see declaration of 'messagebox::fadeouttime'
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\messagebox.hpp(26,19): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\messagebox.hpp(41,20): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\messagebox.hpp(92,18): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\messagebox.hpp(93,19): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\confirmbox.hpp(20,20): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
 C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\stb_image.h(2224,32): warning C4244: 'argument': conversion from 'int' to 'short', possible loss of data
 C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\stb_image.h(2281,35): warning C4244: 'argument': conversion from 'int' to 'short', possible loss of data
 C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\stb_image.h(3425,49): warning C4244: '=': conversion from 'int' to 'unsigned char', possible loss of data
-C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\main.cpp(133,9): warning C4189: 'my_image_width': local variable is initialized but not referenced
-C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\main.cpp(135,12): warning C4189: 'my_image_texture': local variable is initialized but not referenced
-C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\main.cpp(134,9): warning C4189: 'my_image_height': local variable is initialized but not referenced
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\stb_image_write.h(776,13): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\main.cpp(157,9): warning C4189: 'my_image_width': local variable is initialized but not referenced
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\main.cpp(159,12): warning C4189: 'my_image_texture': local variable is initialized but not referenced
+C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\main.cpp(158,9): warning C4189: 'my_image_height': local variable is initialized but not referenced
   example_glfw_opengl3.vcxproj -> C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\Debug\glfw_opengl3.exe

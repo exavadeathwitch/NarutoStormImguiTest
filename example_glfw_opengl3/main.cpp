@@ -9,16 +9,27 @@
 #include <stdio.h>
 #include <iostream>
 #include "imguifade.hpp"
+#include <filesystem>
 #define GL_SILENCE_DEPRECATION
 #if defined(IMGUI_IMPL_OPENGL_ES2)
 #include <GLES2/gl2.h>
 #endif
 #include <GLFW/glfw3.h> // Will drag system OpenGL headers
 #include "image.hpp"
+#include "nineslice.hpp"
+#include "textbox.hpp"
+#include "messagebox.hpp"
+#include "confirmbox.hpp"
+#include "soloud/soloud.h"
+#include "soloud/soloud_wav.h"
+//#include "video.hpp"
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb_image.h"
+#define STB_IMAGE_WRITE_IMPLEMENTATION
+#include "stb_image_write.h"
+#include <thread>
 // Simple helper function to load an image into a OpenGL texture with common settings
-bool LoadTextureFromFile(const char* filename, GLuint* out_texture, int* out_width, int* out_height)
+bool LoadTextureFromFile(const char* filename, GLuint* out_texture, int* out_width, int* out_height, bool changeheight = true)
 {
     // Load from file
     int image_width = 0;
@@ -45,8 +56,10 @@ bool LoadTextureFromFile(const char* filename, GLuint* out_texture, int* out_wid
     stbi_image_free(image_data);
 
     *out_texture = image_texture;
-    *out_width = image_width;
-    *out_height = image_height;
+    if (changeheight) {
+        *out_width = image_width;
+        *out_height = image_height;
+    }
 
     return true;
 }
@@ -62,7 +75,17 @@ static void glfw_error_callback(int error, const char* description)
 {
     fprintf(stderr, "Glfw Error %d: %s\n", error, description);
 }
-
+void loadvideo(std::vector<GLuint> &view, std::string &path, int &maxframecount, bool &videoloaded, int &width, int &height) {
+    int count = 0;
+    for (const auto& entry : std::filesystem::directory_iterator(path)) {
+        std::cout << entry.path().generic_string() << std::endl;
+        view.push_back(0);
+        LoadTextureFromFile(entry.path().generic_string().c_str(), (GLuint*)&view[count], &width, &height, true);
+        count++;
+    }
+    maxframecount = count - 1;
+    videoloaded = true;
+}
 int main(int, char**)
 {
     // Setup window
@@ -104,17 +127,18 @@ int main(int, char**)
     IMGUI_CHECKVERSION();
     ImGui::CreateContext();
     ImGuiIO& io = ImGui::GetIO(); (void)io;
+    io.ConfigFlags |= ImGuiConfigFlags_NavEnableGamepad;
+    io.Fonts->AddFontFromFileTTF("font.ttf", 36);
     //io.ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;     // Enable Keyboard Controls
     //io.ConfigFlags |= ImGuiConfigFlags_NavEnableGamepad;      // Enable Gamepad Controls
 
     // Setup Dear ImGui style
     ImGui::StyleColorsDark();
     //ImGui::StyleColorsLight();
-
+    sound::init();
     // Setup Platform/Renderer backends
     ImGui_ImplGlfw_InitForOpenGL(window, true);
     ImGui_ImplOpenGL3_Init(glsl_version);
-    image2.setPosition(0, 0);
     // Load Fonts
     // - If no fonts are loaded, dear imgui will use the default font. You can also load multiple fonts and use ImGui::PushFont()/PopFont() to select them.
     // - AddFontFromFileTTF() will return the ImFont* so you can store it if you need to select the font among multiple.
@@ -133,14 +157,24 @@ int main(int, char**)
     int my_image_width = 0;
     int my_image_height = 0;
     GLuint my_image_texture = 0;
-    bool ret = LoadTextureFromFile(image2.path.c_str(), (GLuint*)&image2.view, &image2.width, &image2.height);
-    IM_ASSERT(ret);
+    bool ret = LoadTextureFromFile(imagetest1.path.c_str(), (GLuint*)&imagetest1.view, &imagetest1.widthint, &imagetest1.heightint, false);
+    ret = LoadTextureFromFile(imagetest2.path.c_str(), (GLuint*)&imagetest2.view, &imagetest2.widthint, &imagetest2.heightint, false);
+    LoadTextureFromFile(imagetest2.path.c_str(), (GLuint*)&imagetest3.view, &imagetest3.widthint, &imagetest3.heightint, false);
+    LoadTextureFromFile(imagetest2.path.c_str(), (GLuint*)&imagetest4.view, &imagetest4.widthint, &imagetest4.heightint, false);
+    LoadTextureFromFile(imagetest2.path.c_str(), (GLuint*)&imagetest5.view, &imagetest5.widthint, &imagetest5.heightint, false);
+    LoadTextureFromFile(imagetest2.path.c_str(), (GLuint*)&imagetest6.view, &imagetest6.widthint, &imagetest6.heightint, false);
+    LoadTextureFromFile(imagetest2.path.c_str(), (GLuint*)&imagetest7.view, &imagetest7.widthint, &imagetest7.heightint, false);
+    LoadTextureFromFile(imagetest2.path.c_str(), (GLuint*)&imagetest8.view, &imagetest8.widthint, &imagetest8.heightint, false);
+    LoadTextureFromFile(imagetest2.path.c_str(), (GLuint*)&imagetest9.view, &imagetest9.widthint, &imagetest9.heightint, false);
+    for (int x = 0; x < 9; x++)
+        LoadTextureFromFile(testslice.slices[x].path.c_str(), (GLuint*)&testslice.slices[x].view, &testslice.slices[x].widthint, &testslice.slices[x].heightint, false);
+    //loadvideo(video1.view, video1.path, video1.maxframecount, video1.videoloaded, video1.width, video1.height);
     // Our state
-    bool show_demo_window = true;
+    bool show_demo_window = false;
     bool show_another_window = false;
-    ImVec4 clear_color = ImVec4(0.45f, 0.55f, 0.60f, 1.00f);
-    image2.setXStretch(2.0f);
-    image2.setYStretch(2.0f);
+    ImVec4 clear_color = ImVec4(0.0f, 0.0f, 0.0f, 1.00f);
+    confirmtest.center[0] = true;
+    confirmtest.center[1] = true;
     // Main loop
     while (!glfwWindowShouldClose(window))
     {
@@ -155,7 +189,9 @@ int main(int, char**)
         ImGui_ImplGlfw_NewFrame();
         ImGui::NewFrame();
         fade.imguifadeloop();
-        image2.Begin();
+        //video1.Begin();
+        confirmtest.Begin();
+        //testslice.Begin();
         // 1. Show the big demo window (Most of the sample code is in ImGui::ShowDemoWindow()! You can browse its code to learn more about Dear ImGui!).
         if (show_demo_window)
             ImGui::ShowDemoWindow(&show_demo_window);
@@ -164,30 +200,8 @@ int main(int, char**)
         {
             static float f = 0.0f;
             static int counter = 0;
-
-            ImGui::Begin("Hello, world!");                          // Create a window called "Hello, world!" and append into it.
-            if (ImGui::Button("test"))
-                image2.fadeout(100);
-            if (ImGui::Button("testa"))
-                image2.fadein(100);
-            if (ImGui::Button("testb")) {
-                image2.center[0] = true;
-                image2.center[1] = true;
-            }
-            ImGui::Text("This is some useful text.");               // Display some text (you can use a format strings too)
-            ImGui::Checkbox("Demo Window", &show_demo_window);      // Edit bools storing our window open/close state
-            ImGui::Checkbox("Another Window", &show_another_window);
-
-            ImGui::SliderFloat("float", &f, 0.0f, 1.0f);            // Edit 1 float using a slider from 0.0f to 1.0f
-            ImGui::ColorEdit3("clear color", (float*)&clear_color); // Edit 3 floats representing a color
-
-            if (ImGui::Button("Button"))                            // Buttons return true when clicked (most widgets return true when edited/activated)
-                counter++;
-            ImGui::SameLine();
-            ImGui::Text("counter = %d", counter);
-
-            ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 1000.0f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);
-            ImGui::End();
+            if (ImGui::IsKeyPressed(ImGuiKey_1))
+                confirmtest.start(-1);
         }
 
         // 3. Show another simple window.

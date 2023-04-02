@@ -77,6 +77,7 @@
     <IntDir>$(ProjectDir)$(Configuration)\</IntDir>
     <IncludePath>$(IncludePath)</IncludePath>
     <ExternalIncludePath>C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\backends;C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\imgui;$(ExternalIncludePath)</ExternalIncludePath>
+    <LibraryPath>C:\Users\Exavadeathwitch\Documents\GitHub\NarutoStormImguiTest\example_glfw_opengl3\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <OutDir>$(ProjectDir)$(Configuration)\</OutDir>
@@ -112,7 +113,7 @@
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>..\libs\glfw\lib-vc2010-64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>opengl32.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>opengl32.lib;glfw3.lib;soloud_static_x64.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <SubSystem>Console</SubSystem>
       <IgnoreSpecificDefaultLibraries>msvcrt.lib</IgnoreSpecificDefaultLibraries>
     </Link>
@@ -169,6 +170,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\backends\imgui_impl_glfw.h" />
+    <ClInclude Include="confirmbox.hpp" />
+    <ClInclude Include="imguiutil.hpp" />
+    <ClInclude Include="messagebox.hpp" />
+    <ClInclude Include="nineslice.hpp" />
     <ClInclude Include="image.hpp" />
     <ClInclude Include="imguifade.hpp" />
     <ClInclude Include="imgui\imconfig.h" />
@@ -179,6 +184,45 @@
     <ClInclude Include="imgui\imstb_rectpack.h" />
     <ClInclude Include="imgui\imstb_textedit.h" />
     <ClInclude Include="imgui\imstb_truetype.h" />
+    <ClInclude Include="soloud\soloud.h" />
+    <ClInclude Include="soloud\soloud_audiosource.h" />
+    <ClInclude Include="soloud\soloud_bassboostfilter.h" />
+    <ClInclude Include="soloud\soloud_biquadresonantfilter.h" />
+    <ClInclude Include="soloud\soloud_bus.h" />
+    <ClInclude Include="soloud\soloud_c.h" />
+    <ClInclude Include="soloud\soloud_dcremovalfilter.h" />
+    <ClInclude Include="soloud\soloud_echofilter.h" />
+    <ClInclude Include="soloud\soloud_error.h" />
+    <ClInclude Include="soloud\soloud_fader.h" />
+    <ClInclude Include="soloud\soloud_fft.h" />
+    <ClInclude Include="soloud\soloud_fftfilter.h" />
+    <ClInclude Include="soloud\soloud_file.h" />
+    <ClInclude Include="soloud\soloud_file_hack_off.h" />
+    <ClInclude Include="soloud\soloud_file_hack_on.h" />
+    <ClInclude Include="soloud\soloud_filter.h" />
+    <ClInclude Include="soloud\soloud_flangerfilter.h" />
+    <ClInclude Include="soloud\soloud_freeverbfilter.h" />
+    <ClInclude Include="soloud\soloud_internal.h" />
+    <ClInclude Include="soloud\soloud_lofifilter.h" />
+    <ClInclude Include="soloud\soloud_misc.h" />
+    <ClInclude Include="soloud\soloud_monotone.h" />
+    <ClInclude Include="soloud\soloud_noise.h" />
+    <ClInclude Include="soloud\soloud_openmpt.h" />
+    <ClInclude Include="soloud\soloud_queue.h" />
+    <ClInclude Include="soloud\soloud_robotizefilter.h" />
+    <ClInclude Include="soloud\soloud_sfxr.h" />
+    <ClInclude Include="soloud\soloud_speech.h" />
+    <ClInclude Include="soloud\soloud_tedsid.h" />
+    <ClInclude Include="soloud\soloud_thread.h" />
+    <ClInclude Include="soloud\soloud_vic.h" />
+    <ClInclude Include="soloud\soloud_vizsn.h" />
+    <ClInclude Include="soloud\soloud_wav.h" />
+    <ClInclude Include="soloud\soloud_waveshaperfilter.h" />
+    <ClInclude Include="soloud\soloud_wavstream.h" />
+    <ClInclude Include="sound.hpp" />
+    <ClInclude Include="stb_image_write.h" />
+    <ClInclude Include="textbox.hpp" />
+    <ClInclude Include="textlines.hpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\README.txt" />
