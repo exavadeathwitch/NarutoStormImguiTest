@@ -28,7 +28,7 @@ public:
                 break;
             case 1: {
                 bool use_work_area = true;
-                ImGuiWindowFlags flags = ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoDecoration | ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoSavedSettings;
+                ImGuiWindowFlags flags = ImGuiWindowFlags_NoFocusOnAppearing | ImGuiWindowFlags_NoNav | ImGuiWindowFlags_NoNavFocus | ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoDecoration | ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoSavedSettings;
                 const ImGuiViewport* viewport = ImGui::GetMainViewport();
                 ImGui::SetNextWindowPos(use_work_area ? viewport->WorkPos : viewport->Pos);
                 ImGui::SetNextWindowSize(use_work_area ? viewport->WorkSize : viewport->Size);

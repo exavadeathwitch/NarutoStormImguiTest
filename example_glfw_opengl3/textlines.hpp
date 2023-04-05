@@ -37,7 +37,7 @@ public:
 		while (std::getline(ss, token, '\n')) {
 			ImVec2 textsize = ImGui::CalcTextSize(token.c_str());
 			float padding = (this->width - textsize.x) / 2.0f;
-			tokens.push_back(line(padding, token, textsize.x, textsize.y));
+			tokens.push_back(line(padding, token, textsize.x + (padding * 2), textsize.y));
 		}
 
 		return tokens;
@@ -65,6 +65,7 @@ public:
 		ImGui::Begin(name.c_str(), &enable, ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoBackground);
 		ImGui::End();
 		for (int x = 0; x < lines.size(); x++) {
+			ImGui::SetNextWindowSize({ lines.at(x).xsize, lines.at(x).ysize });
 			ImGui::SetNextWindowPos({ (float)this->xpos, (x * lines.at(x).ysize) + (float)this->ypos });
 			ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, { lines.at(x).xpadding, 0 });
 			ImGui::Begin((name + std::to_string(x) + lines.at(x).text).c_str(), &enable, ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoBackground);

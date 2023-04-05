@@ -184,6 +184,9 @@
     <ClInclude Include="imgui\imstb_rectpack.h" />
     <ClInclude Include="imgui\imstb_textedit.h" />
     <ClInclude Include="imgui\imstb_truetype.h" />
+    <ClInclude Include="optionbox.hpp" />
+    <ClInclude Include="optionlines.hpp" />
+    <ClInclude Include="scrolltextbox.hpp" />
     <ClInclude Include="soloud\soloud.h" />
     <ClInclude Include="soloud\soloud_audiosource.h" />
     <ClInclude Include="soloud\soloud_bassboostfilter.h" />

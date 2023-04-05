@@ -84,13 +84,14 @@ public:
             this->scale = num;
             return;
         }
-        this->width = (slicedim[0].x + slicedim[1].x + slicedim[2].x);
-        this->width = this->width * num;
-        this->height = (slicedim[0].y + slicedim[3].y + slicedim[6].y) * num;
         for (int x = 0; x < 9; x++) {
             slices[x].width = slicedim[x].x * num;
             slices[x].height = slicedim[x].y * num;
         }
+        this->width = (slicedim[0].x + slicedim[1].x + slicedim[2].x);
+        this->width = this->width * num;
+        this->height = (slicedim[0].y + slicedim[3].y + slicedim[6].y);
+        this->height = this->height * num;
         this->scale = num;
     }
     void adjust5xstretch() {
@@ -117,21 +118,21 @@ public:
     }
     void setup() {
         slices[0].setx1y1(ImVec2(0, 0));
-        slices[0].setx2y2(ImVec2((float)(slices[0].width) / 96.0f, (float)(slices[0].height) / 91.0f));
+        slices[0].setx2y2(ImVec2((float)(slices[0].width) / this->width, (float)(slices[0].height) / this->height));
         slices[1].setx1y1(ImVec2(slices[0].x2y2.x, 0));
-        slices[1].setx2y2(ImVec2((float)(slices[0].width + slices[1].width) / 96.0f, slices[0].x2y2.y));
+        slices[1].setx2y2(ImVec2((float)(slices[0].width + slices[1].width) / this->width, slices[0].x2y2.y));
         slices[2].setx1y1(ImVec2(slices[1].x2y2.x, 0));
-        slices[2].setx2y2(ImVec2(1.0f, (float)(slices[2].height) / 91.0f));
-        slices[3].setx1y1(ImVec2(0, (float)(slices[0].height) / 91.0f));
-        slices[3].setx2y2(ImVec2((float)(slices[3].width) / 96.0f, (float)(slices[0].height + slices[3].height) / 91.0f));
+        slices[2].setx2y2(ImVec2(1.0f, (float)(slices[2].height) / this->height));
+        slices[3].setx1y1(ImVec2(0, (float)(slices[0].height) / this->height));
+        slices[3].setx2y2(ImVec2((float)(slices[3].width) / this->width, (float)(slices[0].height + slices[3].height) / this->height));
         slices[4].setx1y1(ImVec2(slices[3].x2y2.x, slices[3].x1y1.y));
-        slices[4].setx2y2(ImVec2((float)(slices[3].width + slices[4].width) / 96.0f, (float)(slices[0].height + slices[4].height) / 91.0f));
-        slices[5].setx1y1(ImVec2((float)(96.0f - slices[5].width) / 96.0f, slices[2].x2y2.y));
-        slices[5].setx2y2(ImVec2(1.0f, (float)(slices[2].height + slices[5].height) / 91.0f));
-        slices[6].setx1y1(ImVec2(0, (float)(slices[0].height + slices[3].height) / 91.0f));
-        slices[6].setx2y2(ImVec2((float)(slices[6].width) / 96.0f, 1.0f));
-        slices[7].setx1y1(ImVec2(slices[6].x2y2.x, (float)(91.0f - slices[7].height) / 91.0f));
-        slices[7].setx2y2(ImVec2((float)(slices[6].width + slices[7].width) / 96.0f, 1.0f));
+        slices[4].setx2y2(ImVec2((float)(slices[3].width + slices[4].width) / this->width, (float)(slices[0].height + slices[4].height) / this->height));
+        slices[5].setx1y1(ImVec2((float)(this->width - slices[5].width) / this->width, slices[2].x2y2.y));
+        slices[5].setx2y2(ImVec2(1.0f, (float)(slices[2].height + slices[5].height) / this->height));
+        slices[6].setx1y1(ImVec2(0, (float)(slices[0].height + slices[3].height) / this->height));
+        slices[6].setx2y2(ImVec2((float)(slices[6].width) / this->width, 1.0f));
+        slices[7].setx1y1(ImVec2(slices[6].x2y2.x, (float)(this->height - slices[7].height) / this->height));
+        slices[7].setx2y2(ImVec2((float)(slices[6].width + slices[7].width) / this->width, 1.0f));
         slices[8].setx1y1(ImVec2(slices[7].x2y2.x, slices[7].x1y1.y));
         slices[8].setx2y2(ImVec2(1.0f, 1.0f));
         this->width = slices[0].width + slices[1].width + slices[2].width;
@@ -140,8 +141,8 @@ public:
             slicedim[x] = { slices[x].width, slices[x].height };
     }
     void Begin() {
-        this->width = (slicedim[0].x + slicedim[1].x + slicedim[2].x) * this->scale;
-        this->height = (slicedim[0].y + slicedim[3].y + slicedim[6].y) * this->scale;
+        //this->width = (slicedim[0].x + slicedim[1].x + slicedim[2].x);
+        //this->height = (slicedim[0].y + slicedim[3].y + slicedim[6].y);
         ImGuiIO& io = ImGui::GetIO();
         float newxpos = this->xpos;
         float leftpivot = 0.0f;
@@ -164,7 +165,7 @@ public:
             rightpivot = 0.5f;
         }
         ImGui::SetNextWindowPos(ImVec2(newxpos, newypos), ImGuiCond_Always, ImVec2(leftpivot, rightpivot));
-        ImGui::SetNextWindowSize({ (float)this->width * this->scale, (float)this->height * this->scale });
+        ImGui::SetNextWindowSize({ (float)this->width, (float)this->height });
         ImGui::Begin((name + "_whole").c_str(), &enable, ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoBackground);
         this->xpos = ImGui::GetWindowPos().x;
         this->ypos = ImGui::GetWindowPos().y;

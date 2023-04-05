@@ -20,6 +20,8 @@
 #include "textbox.hpp"
 #include "messagebox.hpp"
 #include "confirmbox.hpp"
+#include "scrolltextbox.hpp"
+#include "optionbox.hpp"
 #include "soloud/soloud.h"
 #include "soloud/soloud_wav.h"
 //#include "video.hpp"
@@ -117,7 +119,7 @@ int main(int, char**)
 #endif
 
     // Create window with graphics context
-    GLFWwindow* window = glfwCreateWindow(1280, 720, "Dear ImGui GLFW+OpenGL3 example", NULL, NULL);
+    GLFWwindow* window = glfwCreateWindow(1280, 720, "StormImGuiTest", NULL, NULL);
     if (window == NULL)
         return 1;
     glfwMakeContextCurrent(window);
@@ -159,6 +161,7 @@ int main(int, char**)
     GLuint my_image_texture = 0;
     bool ret = LoadTextureFromFile(imagetest1.path.c_str(), (GLuint*)&imagetest1.view, &imagetest1.widthint, &imagetest1.heightint, false);
     ret = LoadTextureFromFile(imagetest2.path.c_str(), (GLuint*)&imagetest2.view, &imagetest2.widthint, &imagetest2.heightint, false);
+    ret = LoadTextureFromFile(image1.path.c_str(), (GLuint*)&image1.view, &image1.widthint, &image1.heightint, true);
     LoadTextureFromFile(imagetest2.path.c_str(), (GLuint*)&imagetest3.view, &imagetest3.widthint, &imagetest3.heightint, false);
     LoadTextureFromFile(imagetest2.path.c_str(), (GLuint*)&imagetest4.view, &imagetest4.widthint, &imagetest4.heightint, false);
     LoadTextureFromFile(imagetest2.path.c_str(), (GLuint*)&imagetest5.view, &imagetest5.widthint, &imagetest5.heightint, false);
@@ -166,6 +169,7 @@ int main(int, char**)
     LoadTextureFromFile(imagetest2.path.c_str(), (GLuint*)&imagetest7.view, &imagetest7.widthint, &imagetest7.heightint, false);
     LoadTextureFromFile(imagetest2.path.c_str(), (GLuint*)&imagetest8.view, &imagetest8.widthint, &imagetest8.heightint, false);
     LoadTextureFromFile(imagetest2.path.c_str(), (GLuint*)&imagetest9.view, &imagetest9.widthint, &imagetest9.heightint, false);
+    LoadTextureFromFile(marker.path.c_str(), (GLuint*)&optiontest.cursor.view, &marker.widthint, &marker.heightint, false);
     for (int x = 0; x < 9; x++)
         LoadTextureFromFile(testslice.slices[x].path.c_str(), (GLuint*)&testslice.slices[x].view, &testslice.slices[x].widthint, &testslice.slices[x].heightint, false);
     //loadvideo(video1.view, video1.path, video1.maxframecount, video1.videoloaded, video1.width, video1.height);
@@ -173,8 +177,8 @@ int main(int, char**)
     bool show_demo_window = false;
     bool show_another_window = false;
     ImVec4 clear_color = ImVec4(0.0f, 0.0f, 0.0f, 1.00f);
-    confirmtest.center[0] = true;
-    confirmtest.center[1] = true;
+    optiontest.center[0] = true;
+    optiontest.center[1] = true;
     // Main loop
     while (!glfwWindowShouldClose(window))
     {
@@ -189,21 +193,20 @@ int main(int, char**)
         ImGui_ImplGlfw_NewFrame();
         ImGui::NewFrame();
         fade.imguifadeloop();
-        //video1.Begin();
-        confirmtest.Begin();
+        //optiontest.Begin();
+        if (optiontest.Begin() == 1)
+            return 1;
         //testslice.Begin();
         // 1. Show the big demo window (Most of the sample code is in ImGui::ShowDemoWindow()! You can browse its code to learn more about Dear ImGui!).
-        if (show_demo_window)
-            ImGui::ShowDemoWindow(&show_demo_window);
+        ImGui::ShowDemoWindow(&show_demo_window);
 
         // 2. Show a simple window that we create ourselves. We use a Begin/End pair to create a named window.
         {
             static float f = 0.0f;
             static int counter = 0;
             if (ImGui::IsKeyPressed(ImGuiKey_1))
-                confirmtest.start(-1);
+                optiontest.start(-1);
         }
-
         // 3. Show another simple window.
         if (show_another_window)
         {

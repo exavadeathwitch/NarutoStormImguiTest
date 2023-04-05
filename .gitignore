@@ -3,3 +3,8 @@
 *.ipch
 *.db
 *.exe
+*.pdb
+example_glfw_opengl3/example_glfw_opengl3.vcxproj
+*.pdb
+*.pdb
+example_glfw_opengl3/Debug/glfw_opengl3.pdb

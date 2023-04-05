@@ -17,6 +17,7 @@ public:
 	int ypos;
 	int width;
 	int height;
+	float defaultscalefont;
 	textlines lines;
 	bool center [2] = { false, false };
 	bool centerpoint [2] = { false, false };
@@ -40,13 +41,15 @@ public:
 	textbox() {
 
 	}
-	textbox(nineslice *slice, std::string name, std::string text) {
+	textbox(nineslice *slice, std::string name, std::string text, float defaultscalefont) {
 		box = slice;
 		this->name = name;
 		this->text = text;
+		this->defaultscalefont = defaultscalefont;
 	}
 	void recalculatesize() {
 		ImVec2 textsize = ImGui::CalcTextSize(text.c_str());
+		box->changescale(ImGui::GetFontSize() / this->defaultscalefont);
 		while (true) {
 			ImVec2 textsizespace = ImGui::CalcTextSize(" ");
 			if (textsize.x + 8.0f + (textsizespace.x * 2.0f) > (float)box->width) {
@@ -100,25 +103,23 @@ public:
 			else if (centerpoint[x])
 				box->centerpoint[x] = centerpoint[x];
 		}
+		ImGui::SetNextWindowSize({ (float)width, (float)height });
+		ImGui::SetNextWindowPos({ newxpos, newypos }, ImGuiCond_None, ImVec2(leftpivot, rightpivot));
+		ImGui::Begin(name.c_str(), &enable, ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoBackground);
+		ImGui::End();
 		box->transparency.w = transparency;
 		box->Begin();
 		xpos = box->xpos;
 		ypos = box->ypos;
 		width = (int)box->width;
 		height = (int)box->height;
-		//ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, padding);
-		ImGui::SetNextWindowSize({ (float)width, (float)height });
-		ImGui::SetNextWindowPos({ newxpos, newypos }, ImGuiCond_None, ImVec2(leftpivot, rightpivot));
-		ImGui::Begin(name.c_str(), &enable, ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoBackground);
-		//ImGui::CenteredText(text.c_str(), ImVec2(box->width + 8.0f, box->height + 8.0f));
-		//ImGui::CenteredText("\ntesttest", ImVec2(box->width + 8.0f, box->height + 8.0f + g.Style.WindowPadding.y));
-			//ImGui::Text(strings[x].c_str());
-		//ImGui::PopStyleVar(1);
-		ImGui::End();
 		if (texttransparency == 0.0f)
 			return;
-		textlines(name + "_textline", text, width, height, xpos, ypos + padding.y, ImVec4(1.0f, 1.0f, 1.0f, (float)texttransparency) ).Begin();
+		displayText();
+		}
+	void displayText() {
+		textlines(name + "_textline", text, width, ImGui::CalcTextSize(text.c_str()).y, xpos, ypos + padding.y, ImVec4(1.0f, 1.0f, 1.0f, (float)texttransparency)).Begin();
 	}
 };
 
-inline textbox testtext = textbox(&testslice, "asdfasdf", "This game supports autosave. While saving or loading, an icon\nwill be displayed. Do not turn off the power during this time.");
+inline textbox testtext = textbox(&testslice, "asdfasdf", "This game supports autosave. While saving or loading, an icon\nwill be displayed. Do not turn off the power during this time.", 36.0f);

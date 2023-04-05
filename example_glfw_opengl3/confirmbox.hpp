@@ -4,6 +4,7 @@
 #include "sound.hpp"
 class confirmbox : public messagebox {
 public:
+	bool returnonback = false;
 	confirmbox() {
 
 	}
@@ -16,7 +17,9 @@ public:
 	}
 	void Begin() {
 		if (ImGui::IsKeyPressed(ImGuiKey_GamepadFaceDown)) {
-			sound::play();
+			fadeto((2 * FPS / 30), 1);
+		}
+		if (returnonback && transparency == 1.0f && choice == 0 && ImGui::IsKeyPressed(ImGuiKey_GamepadFaceRight)) {
 			fadeto((2 * FPS / 30), 1);
 		}
 		messagebox::Begin();

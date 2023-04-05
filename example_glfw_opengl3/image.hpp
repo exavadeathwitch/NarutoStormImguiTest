@@ -60,6 +60,10 @@ public:
         this->ystretch = ystretch;
         this->height = this->height * ystretch;
     }
+    void setYHeight(float yheight) {
+        this->ystretch = yheight / this->height;
+        this->height = yheight;
+    }
     void setPosition(int xpos, int ypos) {
         this->xpos = xpos - 8;
         this->ypos = ypos - 8;
@@ -132,4 +136,5 @@ inline image imagetest6 = image(32, 20, "slice.png", "imageff test6", ImGuiWindo
 inline image imagetest7 = image(44, 43, "slice.png", "imageff test7", ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoBackground | ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoResize);
 inline image imagetest8 = image(20, 31, "slice.png", "imageff test8", ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoBackground | ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoResize);
 inline image imagetest9 = image(32, 31, "slice.png", "imageff test9", ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoBackground | ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoResize);
+inline image marker = image(440, 36, "marker.png", "marker test", ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoBackground | ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoResize);
 //inline image imagetest = image(960, 540, "test3.png", "imageff test", ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoBackground | ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoResize);

@@ -20,6 +20,14 @@ public:
 	void fadeto(int fadeduration, int choice) {
 		fadeincrement = 1.0f / (float)fadeduration;
 		this->choice = choice;
+		switch (choice) {
+		case 1:
+			sound::play();
+			break;
+		case 2:
+			sound::play2();
+			break;
+		}
 	}
 	void start(int fadeouttime) {
 		this->fadeouttime = fadeouttime;
@@ -58,7 +66,6 @@ public:
 			usetp = true;
 			break;
 		case 2:
-			sound::play2();
 			if (this->transparency >= 1.0f) {
 				this->transparency = 1.0f;
 				box->changescale(1.0f);

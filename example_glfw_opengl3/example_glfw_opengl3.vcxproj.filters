@@ -178,6 +178,9 @@
       <Filter>soloud</Filter>
     </ClInclude>
     <ClInclude Include="sound.hpp" />
+    <ClInclude Include="scrolltextbox.hpp" />
+    <ClInclude Include="optionbox.hpp" />
+    <ClInclude Include="optionlines.hpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\README.txt" />
